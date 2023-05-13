@@ -22,7 +22,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "// {\r\n//     \"name\":\"d1\",\r\n//     \"include\":[\"India\",\"United States\",\"Italy\"],\r\n//     \"exclude\":[\r\n//         {\r\n//         \"city\":\"\",\r\n//         \"province\":\"Karnataka\",\r\n//         \"country\":\"India\"   \r\n//         },{\r\n//             \"city\":\"Chennai\",\r\n//         \"province\":\"Tamil Nadu\",\r\n//         \"country\":\"India\"    \r\n//         }\r\n//     ],\r\n//     \"parentDistributor\":\"\"\r\n// }\r\n\r\n\r\n{\r\n    \"name\":\"d1\",\r\n    \"include\":[\"India\",\"United States\"],\r\n    \"exclude\":[\r\n        {\r\n        \"city\":\"\",\r\n        \"province\":\"Karnataka\",\r\n        \"country\":\"India\"   \r\n        },{\r\n            \"city\":\"Chennai\",\r\n        \"province\":\"Tamil Nadu\",\r\n        \"country\":\"India\"    \r\n        }\r\n    ],\r\n    \"parentDistributor\":\"\"\r\n}",
+					"raw": "{\r\n    \"name\":\"DISTRIBUTOR1\",\r\n    \"include\":[\r\n         {\r\n        \"city\":\"\",\r\n        \"province\":\"\",\r\n        \"country\":\"INDIA\"   \r\n        }, {\r\n        \"city\":\"\",\r\n        \"province\":\"\",\r\n        \"country\":\"UNITEDSTATES\"   \r\n        }\r\n    ],\r\n    \"exclude\":[\r\n        {\r\n        \"city\":\"\",\r\n        \"province\":\"KARNATAKA\",\r\n        \"country\":\"India\"   \r\n        },{\r\n            \"city\":\"Chennai\",\r\n        \"province\":\"Tamil Nadu\",\r\n        \"country\":\"India\"    \r\n        }\r\n    ],\r\n    \"parentDistributor\":\"\"\r\n}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,7 +50,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"d2\",\r\n    \"include\":[\r\n         {\r\n        \"city\":\"\",\r\n        \"province\":\"\",\r\n        \"country\":\"India\"   \r\n        } ],\r\n    \"exclude\":[\r\n       {\r\n            \"city\":\"\",\r\n        \"province\":\"Tamil Nadu\",\r\n        \"country\":\"India\"    \r\n        }\r\n    ],\r\n    \"parentDistributor\":\"d1\"\r\n}\r\n\r\n",
+					"raw": "{\r\n    \"name\":\"DISTRIBUTOR2\",\r\n    \"include\":[\r\n         {\r\n        \"city\":\"\",\r\n        \"province\":\"\",\r\n        \"country\":\"India\"   \r\n        } ],\r\n    \"exclude\":[\r\n       {\r\n            \"city\":\"\",\r\n        \"province\":\"Tamil Nadu\",\r\n        \"country\":\"India\"    \r\n        }\r\n    ],\r\n    \"parentDistributor\":\"DISTRIBUTOR1\"\r\n}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,7 +78,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"d3\",\r\n    \"include\":[\r\n        \r\n         {\r\n        \"city\":\"HUBLI\",\r\n        \"province\":\"KARNATAKA\",\r\n        \"country\":\"India\"   \r\n        }\r\n    ],\r\n   \r\n    \"parentDistributor\":\"d2\"\r\n}",
+					"raw": "{\r\n    \"name\":\"DISTRIBUTOR3\",\r\n    \"include\":[\r\n        \r\n         {\r\n        \"city\":\"HUBLI\",\r\n        \"province\":\"KARNATAKA\",\r\n        \"country\":\"India\"   \r\n        }\r\n    ],\r\n   \r\n    \"parentDistributor\":\"d2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,14 +123,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/permission/d2",
+					"raw": "localhost:8080/permission/d1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"permission",
-						"d2"
+						"d1"
 					]
 				}
 			},
@@ -143,7 +143,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"d2\",\r\n    \"location\":   {\r\n            \"city\":\"\",\r\n        \"province\":\"KARNATAKA\",\r\n        \"country\":\"INDIA\"\r\n         \r\n        }\r\n}",
+					"raw": "{\r\n    \"name\":\"DISTRIBUTOR1\",\r\n    \"location\":   {\r\n            \"city\":\"KOTTAIYUR\",\r\n        \"province\":\"TAMILNADU\",\r\n        \"country\":\"INDIA\"\r\n         \r\n        }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -167,7 +167,19 @@
 			"name": "getCntryByName",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/getall/india",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getall",
+						"india"
+					]
+				}
 			},
 			"response": []
 		},
